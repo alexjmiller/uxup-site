@@ -1,0 +1,18 @@
+# Static — no build step. Netlify just serves this directory as-is.
+[build]
+  publish = "."
+  command = ""
+
+# Don't cache the iife bundle aggressively — we rebuild + push it whenever
+# the feedbakkr monorepo SDK changes and want new deploys visible
+# immediately.
+[[headers]]
+  for = "/feedbakkr.iife.js"
+  [headers.values]
+    Cache-Control = "public, max-age=60, must-revalidate"
+
+# Fake-door routes: every nav link on the homepage points to a path
+# that doesn't have a backing page yet. Redirect them all to a single
+# "coming soon" stub via the splat rule in _redirects below — keeps
+# Netlify from serving its default 404 page (which would muddy the
+# fake-door signal) without us having to author a real page per slug.

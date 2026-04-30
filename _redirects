@@ -1,0 +1,13 @@
+# Fake-door routes — every nav link the demo offers points at a path
+# that doesn't have a real page yet. We catch them here and rewrite to
+# /coming-soon.html so a click reads as "not built yet" rather than a
+# Netlify 404. The status 200 (rewrite, not redirect) means the URL bar
+# stays on the original path — useful for analytics filtering later.
+/events       /coming-soon.html  200
+/past         /coming-soon.html  200
+/speakers     /coming-soon.html  200
+/sponsor      /coming-soon.html  200
+/code-of-conduct /coming-soon.html 200
+/x            /coming-soon.html  200
+/linkedin     /coming-soon.html  200
+/mastodon     /coming-soon.html  200
