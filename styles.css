@@ -78,15 +78,25 @@ img { max-width: 100%; display: block; }
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   text-decoration: none;
   color: var(--color-text);
 }
-.brand__name {
+.brand__logo {
+  height: 40px;
+  width: 40px;
+  border-radius: var(--radius-sm);
+  display: block;
+}
+.brand__suffix {
   font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 18px;
-  letter-spacing: -0.01em;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--color-muted);
+  letter-spacing: -0.005em;
+}
+@media (max-width: 480px) {
+  .brand__suffix { display: none; }
 }
 .topbar__nav {
   display: flex;
